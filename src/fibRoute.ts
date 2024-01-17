@@ -4,10 +4,9 @@ import fibonacci from "./fib";
 import { Request, Response } from "express";
 
 export default (req: Request, res: Response) => {
-  const { num } = req.params;
-  const numAsNumber: number = parseInt(num, 10);
+  const { numAsNumber } = req.params;
 
-  const fibN: number = fibonacci(parseInt(num));
+  const fibN: number = fibonacci(parseInt(numAsNumber));
   let result: string;
   result = '';
   if (fibN < 0 || isNaN(fibN)) {
