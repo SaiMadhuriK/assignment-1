@@ -8,13 +8,11 @@ export default (req: Request, res: Response) => {
 
   const fibN: number = fibonacci(parseInt(numAsNumber));
   let result: string;
-  result = "";
   if (fibN < 0 || isNaN(fibN)) {
-    result = 'fibonacci(${numAsNumber}) is undefined';
+    result = `fibonacci(${numAsNumber}) is undefined`;
   }
-
   else if (fibN>=0 && !isNaN(fibN)){
-    result = 'fibonacci(${numAsNumber}) is ${fibN}';
+    result = `fibonacci(${numAsNumber}) is ${fibN}`;
   }
   res.send(result);
 }
