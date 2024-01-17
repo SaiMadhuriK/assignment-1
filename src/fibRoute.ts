@@ -4,15 +4,15 @@ import fibonacci from "./fib";
 import { Request, Response } from "express";
 
 export default (req: Request, res: Response) => {
-  const { numAsNumber } = req.params;
+  const { num } = req.params;
 
-  const fibN: number = fibonacci(parseInt(numAsNumber));
+  const fibN: number = fibonacci(parseInt(num));
   let result: string;
 
   if (fibN < 0 || isNaN(fibN)) {
-    result = `fibonacci(${numAsNumber}) is undefined`;
+    result = `fibonacci(${num}) is undefined`;
   } else {
-    result = `fibonacci(${numAsNumber}) is ${fibN}`;
+    result = `fibonacci(${num}) is ${fibN}`;
   }
 
   res.send(result);
